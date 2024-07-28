@@ -1,7 +1,7 @@
 const express = require('express');
 const dishesRoutes = require('./routes/dishesRoutes'); // Importing routes
 const userRoutes = require("./routes/userRoutes");
-
+const cors = require("cors");
 
 const mongoose = require('mongoose');
 
@@ -12,7 +12,7 @@ console.log("hello");
 
 const app = express();
 const port = 5000;
-
+app.use(cors());
 app.use(express.json()); // Correct usage
 
 app.use((req,res,next)=>{
